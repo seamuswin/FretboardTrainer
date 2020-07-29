@@ -31,6 +31,9 @@
         <Tab Title="Home" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
         </Tab>
+        <Tab Title="Less Good Home" Icon="tab_feed.png">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage2}" />
+        </Tab>
         <!--<Tab Title="Strings" Icon="tab_about.png">
             <ShellContent ContentTemplate="{DataTemplate local:PracSetupPage}" />
         </Tab>-->

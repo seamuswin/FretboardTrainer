@@ -16,7 +16,9 @@ namespace Fretboard_Trainer.Services
             Instruments = new List<Instrument>()
             {
                 new Instrument {Id = Guid.NewGuid().ToString(), Name = "5 String Bass", PlayableStrings = new List<string>{"B","E","A","D","G"} },
-                new Instrument {Id = Guid.NewGuid().ToString(), Name = "Standard Bass", PlayableStrings = new List<string>{"E","A","D","G"} }
+                new Instrument {Id = Guid.NewGuid().ToString(), Name = "Standard Bass", PlayableStrings = new List<string>{"E","A","D","G"} },
+                new Instrument {Id = Guid.NewGuid().ToString(), Name = "6 String Guitar", PlayableStrings = new List<string>{"E","A","D","G", "B", "e"} },
+                new Instrument {Id = Guid.NewGuid().ToString(), Name = "Drop D Guitar", PlayableStrings = new List<string>{"D","A","D","G", "B", "e"} }
             };
         }
 

@@ -10,35 +10,32 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadInstrumentsCommand}">
-                <CollectionView x:Name="InstrumentsColView" ItemsSource="{Binding Instruments}" SelectionMode="Single" SelectionChanged="CollectionView_SelectionChanged">
+                <CollectionView x:Name="InstrumentsColView" 
+                                Margin="10"
+                                ItemsSource="{Binding Instruments}" 
+                                SelectionMode="Single" 
+                                SelectionChanged="CollectionView_SelectionChanged">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"
+                                         Span="2" 
+                                         HorizontalItemSpacing="10"
+                                         VerticalItemSpacing="10"
+                                         />
+                    </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
-                        <DataTemplate><!-- this is where to change what you want the instruments to look like :) -->
-                            <StackLayout Padding="10">
+                        <DataTemplate>
+                            <!-- this is where to change what you want the instruments to look like :) -->
+                            <Frame Padding="10" BackgroundColor="Purple">
                                 <Label Text="{Binding Name}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            </StackLayout>
+                                    LineBreakMode="NoWrap" 
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="White"
+                                    FontSize="16" />
+                            </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
-            <!--<Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Button Text="Instrument 1" />
-                <Button Text="Instrument 2" Grid.Column="1" />
-                <Button Text="Instrument 3" Grid.Row="1" />
-                <Button Text="New Instrument" Grid.Column="1" Grid.Row="1" /> 
-            </Grid>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button Text="Manage Instruments" WidthRequest="-1" />
-                <Button Text="About" />
-            </StackLayout> -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
