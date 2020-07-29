@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\PracSetupPage.xaml.cs">
+      <DependentUpon>PracSetupPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\TimerPracPage.xaml.cs">
       <DependentUpon>TimerPracPage.xaml</DependentUpon>
     </Compile>

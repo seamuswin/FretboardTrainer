@@ -5,12 +5,11 @@ using Xamarin.Forms;
 
 namespace Fretboard_Trainer.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class PracSetupViewModel : BaseViewModel
     {
-        public AboutViewModel()
+        public PracSetupViewModel()
         {
-            Title = "whatever";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
+            Title = "Setup Practice";
         }
 
         public ICommand OpenWebCommand { get; }

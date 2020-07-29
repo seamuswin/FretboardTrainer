@@ -1,18 +1,18 @@
-﻿using System;
+﻿using Fretboard_Trainer.Models;
+using Fretboard_Trainer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 
-using Fretboard_Trainer.Models;
-using Fretboard_Trainer.Services;
 
 namespace Fretboard_Trainer.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<Instrument> InstrumentDataStore => DependencyService.Get<IDataStore<Instrument>>();
 
         bool isBusy = false;
         public bool IsBusy

@@ -13,7 +13,7 @@ namespace Fretboard_Trainer
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<MockInstrumentStore>();
             MainPage = new AppShell();
         }
 

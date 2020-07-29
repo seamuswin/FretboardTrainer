@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fretboard_Trainer.Views.PracSetupPage"
+             xmlns:vm="clr-namespace:Fretboard_Trainer.ViewModels"
+             Title="{Binding Name}">
+
+    <ContentPage.BindingContext>
+        <vm:PracSetupViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <StackLayout BindableLayout.ItemsSource="{Binding PlayableStrings}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox CheckedChanged="CheckBox_CheckedChanged" BindingContext="{Binding}"/>
+                        <Label Text="{Binding}" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+        <Button Text="Next"
+                Clicked="Button_Clicked"/>
+    </StackLayout>
+    
+</ContentPage>
