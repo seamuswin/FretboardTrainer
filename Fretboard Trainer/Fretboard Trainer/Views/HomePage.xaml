@@ -36,6 +36,7 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
+            <Button Text="Add an Instrument" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
