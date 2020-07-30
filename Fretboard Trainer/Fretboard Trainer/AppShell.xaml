@@ -3,7 +3,8 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:Fretboard_Trainer.Views"
        Title="Fretboard_Trainer"
-       x:Class="Fretboard_Trainer.AppShell">
+       x:Class="Fretboard_Trainer.AppShell"
+       Visual="Material">
 
     <!-- 
         Styles and Resources 
@@ -28,10 +29,13 @@
 
     <!-- Your Pages -->
     <TabBar>
-        <Tab Title="Home" Icon="tab_feed.png">
+        <Tab Title="Practice" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
         </Tab>
         <Tab Title="Less Good Home" Icon="tab_feed.png">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage2}" />
+        </Tab>
+        <Tab Title="About" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:HomePage2}" />
         </Tab>
         <!--<Tab Title="Strings" Icon="tab_about.png">

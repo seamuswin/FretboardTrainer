@@ -5,16 +5,32 @@
              x:Class="Fretboard_Trainer.Views.TimerPracPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name = "notetoplay"
-                   Text="{Binding NoteToPlay}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" FontSize="Header" />
-            <Label x:Name = "stringtoplay"
-                Text="{Binding StringToPlay}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" FontSize="Title" />
-            <Slider Value="{Binding Seconds}" Minimum="0" Maximum="3" />
-            <Button Text="Play/Pause" Command="{Binding PlayPauseCommand}"/>
+            <Label Text="{Binding NoteToPlay}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" FontSize="Header" />
+            <Label Text="{Binding StringToPlay}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    FontSize="Title" />
+            <Label x:Name="getReadyLabel" 
+                   IsVisible="False" 
+                   FontSize="Large" 
+                   TextColor="Black" 
+                   Text="Get Ready!"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand"/>
+            <ProgressBar Progress="{Binding Mode=OneWay, 
+                                        Path=Seconds, 
+                                        Converter={StaticResource secondsToProgress}}"/>
+            <Button IsVisible="True" 
+                    Text="Go!" 
+                    Clicked="Button_Clicked" />
+            <Button x:Name="pause" 
+                    IsVisible="False" 
+                    Text="{Binding Mode=OneWay, 
+                                Path=Paused, 
+                                Converter={StaticResource playPauseButton}}" 
+                    Command="{Binding PlayPauseCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

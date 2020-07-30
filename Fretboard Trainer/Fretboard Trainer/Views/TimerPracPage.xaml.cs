@@ -41,5 +41,26 @@ namespace Fretboard_Trainer.Views
             var stringstoplay = strs.Split(',').ToList();
             BindingContext = vm = new TimerPracViewModel(stringstoplay);
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            var b = (Button)sender;
+            b.IsVisible = false;
+            pause.IsVisible = true;
+            vm.ExecutePlayPauseCommand();
+            await GetReady();
+
+        }
+
+        private async Task GetReady()
+        {
+            getReadyLabel.IsVisible = true;
+            await Task.Delay(500);
+            await Task.WhenAny<bool>(
+                getReadyLabel.FadeTo(0, 3000)
+            );
+            getReadyLabel.IsVisible = false;
+            
+        }
     }
 }

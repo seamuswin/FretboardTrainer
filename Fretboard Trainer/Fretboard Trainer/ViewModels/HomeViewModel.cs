@@ -14,7 +14,7 @@ namespace Fretboard_Trainer.ViewModels
 
         public HomeViewModel()
         {
-            Title = "House";
+            Title = "Instruments";
             Instruments = new ObservableCollection<Instrument>();
             LoadInstrumentsCommand = new Command(async () => await ExecuteLoadItemsCommand());
         }

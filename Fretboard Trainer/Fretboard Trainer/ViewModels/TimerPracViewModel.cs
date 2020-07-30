@@ -17,7 +17,7 @@ namespace Fretboard_Trainer.ViewModels
         public Command PlayPauseCommand { get; set; }
         public Random rnd = new Random();
         public static Timer pracTimer;
-        public bool Paused = true;
+        bool paused = true;
         public List<string> StringsToPlay { get; set; }
 
         public TimerPracViewModel(List<string> stringsToPlay)
@@ -28,7 +28,7 @@ namespace Fretboard_Trainer.ViewModels
             SetTimer();
         }
 
-        void ExecutePlayPauseCommand()
+        public void ExecutePlayPauseCommand()
         {
             Paused = !Paused;
             pracTimer.Enabled = !Paused;
@@ -65,7 +65,7 @@ namespace Fretboard_Trainer.ViewModels
 
         private void PickNewNote()
         {
-            if (Seconds == 3)
+            if (Seconds == 4)
             {
                 Seconds = 0; 
                 PickString();
@@ -113,6 +113,22 @@ namespace Fretboard_Trainer.ViewModels
                 {
                     seconds = value;
                     OnPropertyChanged("Seconds");
+                }
+            }
+        }
+
+        public bool Paused
+        {
+            get
+            {
+                return paused;
+            }
+            set
+            {
+                if (paused != value)
+                {
+                    paused = value;
+                    OnPropertyChanged("Paused");
                 }
             }
         }
