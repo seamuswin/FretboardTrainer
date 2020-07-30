@@ -13,6 +13,7 @@ namespace Fretboard_Trainer
             InitializeComponent();
             Routing.RegisterRoute("pracsetuppage", typeof(PracSetupPage));
             Routing.RegisterRoute("timerpracpage", typeof(TimerPracPage));
+            Routing.RegisterRoute("addinstrumentpage", typeof(AddInstrumentPage));
         }
     }
 }
