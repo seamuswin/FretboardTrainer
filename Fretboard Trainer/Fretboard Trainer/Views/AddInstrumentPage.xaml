@@ -4,9 +4,10 @@
              x:Class="Fretboard_Trainer.Views.AddInstrumentPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Instrument Name" />
+            <Label Text="# Of Strings" />
+            <Stepper x:Name="stepper" Value="6" />
+            <Label Text="{Binding Source={x:Reference stepper}, Path=Value}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

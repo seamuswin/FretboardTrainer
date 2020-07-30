@@ -11,7 +11,7 @@ namespace Fretboard_Trainer.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if ((int)value == 0)
-                return (float)0;
+                return 0;
             else
                 return (float)(System.Convert.ToDouble(value)
                     / (float)3.0);

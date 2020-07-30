@@ -5,17 +5,13 @@
              xmlns:vm="clr-namespace:Fretboard_Trainer.ViewModels"
              Title="{Binding Name}">
 
-    <ContentPage.BindingContext>
-        <vm:PracSetupViewModel />
-    </ContentPage.BindingContext>
-
     <StackLayout>
         <StackLayout BindableLayout.ItemsSource="{Binding PlayableStrings}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Horizontal">
                         <CheckBox CheckedChanged="CheckBox_CheckedChanged" BindingContext="{Binding}"/>
-                        <Label Text="{Binding}" />
+                        <Label Text="{Binding .}" />
                     </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>

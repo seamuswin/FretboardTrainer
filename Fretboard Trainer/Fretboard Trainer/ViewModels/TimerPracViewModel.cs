@@ -19,6 +19,7 @@ namespace Fretboard_Trainer.ViewModels
         public static Timer pracTimer;
         bool paused = true;
         public List<string> StringsToPlay { get; set; }
+        public int SecondsToPlay = 3;
 
         public TimerPracViewModel(List<string> stringsToPlay)
         {
@@ -49,7 +50,7 @@ namespace Fretboard_Trainer.ViewModels
 
         private void SetTimer()
         {
-            // Create a timer with a 3 second interval.
+            // Create a timer with a 1 second interval.
             pracTimer = new Timer(1000);
             // Hook up the Elapsed event for the timer. 
             pracTimer.Elapsed += OnTimedEvent;
@@ -65,7 +66,7 @@ namespace Fretboard_Trainer.ViewModels
 
         private void PickNewNote()
         {
-            if (Seconds == 4)
+            if (Seconds == SecondsToPlay+1)
             {
                 Seconds = 0; 
                 PickString();

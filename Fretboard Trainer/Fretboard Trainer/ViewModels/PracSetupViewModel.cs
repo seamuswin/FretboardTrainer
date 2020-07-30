@@ -7,11 +7,11 @@ namespace Fretboard_Trainer.ViewModels
 {
     public class PracSetupViewModel : BaseViewModel
     {
+
         public PracSetupViewModel()
         {
             Title = "Setup Practice";
         }
 
-        public ICommand OpenWebCommand { get; }
     }
 }
