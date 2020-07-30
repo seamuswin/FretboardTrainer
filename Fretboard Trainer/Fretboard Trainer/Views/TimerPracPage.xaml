@@ -13,6 +13,8 @@
                 Text="{Binding StringToPlay}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" FontSize="Title" />
+            <Slider Value="{Binding Seconds}" Minimum="0" Maximum="3" />
+            <Button Text="Play/Pause" Command="{Binding PlayPauseCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
